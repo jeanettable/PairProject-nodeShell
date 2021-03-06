@@ -5,7 +5,7 @@ const prompt = (data) => {
 // process.stdout.write("prompt > ");  //see lin 1-4, and ln 7 & 8
 
 const main = (data) => {
-    // process.stdin.on("data", (data) => {     //this piece is now on ln 30
+    // process.stdin.on("data", (data) => {     //this piece is now on ln 29
         const entry = data.toString().trim();
         const [cmd, arg] = entry.split(' ');
       
@@ -15,6 +15,8 @@ const main = (data) => {
           require("./ls");
         } else if(cmd === "cat") {
               require("./cat")(arg, prompt);
+        } else if(cmd === "curl") {
+              require("./curl")(arg, prompt);
         } else {
           process.stdout.write("You typed: " + cmd);
         }
